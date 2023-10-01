@@ -14,6 +14,7 @@ let weather__humidity = document.querySelector('.weather__humidity');
 let weather__wind = document.querySelector('.weather__wind');
 let weather__pressure = document.querySelector('.weather__pressure');
 
+
 // search
 document.querySelector(".weather__search").addEventListener('submit', e => {
     let search = document.querySelector(".weather__searchform");
@@ -46,6 +47,7 @@ document.querySelector(".weather_unit_fahrenheit").addEventListener('click', () 
     }
 })
 
+
 function convertTimeStamp(timestamp, timezone){
      const convertTimezone = timezone / 3600; // convert seconds to hours 
 
@@ -76,6 +78,7 @@ function convertCountryCode(country){
 function getWeather(){
     const API_KEY = '64f60853740a1ee3ba20d0fb595c97d5'
 
+
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currCity}&appid=${API_KEY}&units=${units}`).then(res => res.json()).then(data => {
     console.log(data)
     city.innerHTML = `${data.name}, ${convertCountryCode(data.sys.country)}`
@@ -88,7 +91,16 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currCity}&appid=${API
     weather__humidity.innerHTML = `${data.main.humidity}%`
     weather__wind.innerHTML = `${data.wind.speed} ${units === "imperial" ? "mph": "m/s"}` 
     weather__pressure.innerHTML = `${data.main.pressure} hPa`
+    let imageURL = determineImageUrl(data.weather[0].main);//added
+    document.querySelector('.container').style.backgroundImage = `url(${imageURL})`;
+    
 })
+}
+
+function determineImageUrl(weather){
+    weather = weather.toLowerCase().replace(/ /g, "_")
+
+    return  `public/images/${weather}.png`
 }
 
 document.body.addEventListener('load', getWeather())
