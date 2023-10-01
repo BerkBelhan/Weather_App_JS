@@ -8,7 +8,7 @@
 }
 .container{
     background: #1e2d47;
-    color:#fff;
+    color: whitesmoke;
     padding: 4rem;
     width: 40%;
     margin: 4rem auto;
@@ -102,7 +102,8 @@ input::placeholder{
 .weather__card{
     display: flex;
     align-items: center;
-    background: #193d61;
+    /*background: #193d61;*/
+    background: rgba(25, 61, 97, 0.5);
     padding: 1rem;
     border-radius: 13px;
 }
@@ -136,3 +137,4 @@ input::placeholder{
         grid-template-columns: none;
     }
 }
+
