@@ -7,7 +7,7 @@
     font-family: "Poppins", Lucida-Sans;
 }
 .container{
-    background: #1e2d47;
+    background: #5b7b9b;
     color: whitesmoke;
     padding: 4rem;
     width: 40%;
@@ -21,7 +21,8 @@
 }
 input{
    border: none;
-   background: #5b7b9b ;
+   /*background: #5b7b9b ;*/
+   background: rgba(91, 123, 155, 0.5);
    outline: #1e1e1e;
    color: #fff;
    padding: 0.5rem 2.5rem;
@@ -67,7 +68,8 @@ input::placeholder{
 }
 
 .weather__forecast{
-    background: #193d61;
+    /*background: #5b7b9b;*/
+    background: rgba(91, 123, 155, 0.5);
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 13px;
