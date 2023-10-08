@@ -1,5 +1,5 @@
 // state
-let currCity = "London";
+let currCity = "Brunssum";
 let units = "metric";
 
 // Get the html element using selectors!
